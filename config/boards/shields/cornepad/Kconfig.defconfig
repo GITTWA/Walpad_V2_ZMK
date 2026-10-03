@@ -1,0 +1,6 @@
+if SHIELD_CORNEPAD
+
+config ZMK_KEYBOARD_NAME
+    default "WalPad_V2"
+
+endif
