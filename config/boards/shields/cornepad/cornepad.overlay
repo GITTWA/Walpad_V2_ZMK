@@ -47,7 +47,7 @@
         >;
     };
 
-    // 3. Layout Fisico Reale per ZMK Studio (Regolazione Radiale Calibrata)
+    // 3. Layout Fisico Reale per ZMK Studio
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Cornepad";
@@ -76,9 +76,9 @@
             , <&key_physical_attrs 100 100  400  250     0   0   0>  // Tasto 14: Indice Int. Basso
 
             // --- CLUSTER POLLICE AD ARCO ---
-            , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1
-            , <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2
-            , <&key_physical_attrs 100 100  661  406  3500 500 325>  // Tasto 17: Pollice 3 (Regolato radiale)
+            , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1 (15°)
+            , <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2 (25°)
+            , <&key_physical_attrs 100 100  710  440  3500 500 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
             ;
     };
 };
