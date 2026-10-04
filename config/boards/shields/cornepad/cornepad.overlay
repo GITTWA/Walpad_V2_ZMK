@@ -7,74 +7,78 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    // 1. Definizione Elettrica dei Pin saldati
+    // 1. Matrice Elettrica (Pin fisici saldati)
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
 
-        // Le nostre 6 RIGHE (lato sinistro della scheda)
+        // RIGHE (lato sinistro della scheda)
         row-gpios
-            = <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 0: Mignolo
-            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 1: Anulare
-            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 2: Medio
-            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 3: Indice
-            , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 4: Indice Interno
-            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 5: Blocco Pollice
+            = <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 0: Mignolo (0.20)
+            , <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 1: Anulare (0.22)
+            , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 2: Medio (0.11)
+            , <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 3: Indice (0.24)
+            , <&gpio1  0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 4: Indice Interno (1.00)
+            , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  // Riga 5: Cluster Pollice (0.17)
             ;
 
-        // Le nostre 3 COLONNE (lato destro della scheda)
+        // COLONNE (lato destro della scheda)
         col-gpios
-            = <&gpio1 15 GPIO_ACTIVE_HIGH>  // Colonna 0: Tasti Bassi
-            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // Colonna 1: Tasti Medi (Home)
-            , <&gpio1 11 GPIO_ACTIVE_HIGH>  // Colonna 2: Tasti Alti
+            = <&gpio0  2 GPIO_ACTIVE_HIGH>  // Colonna 0: Tasti Bassi (0.02)
+            , <&gpio1 13 GPIO_ACTIVE_HIGH>  // Colonna 1: Tasti Medi (1.13)
+            , <&gpio1 11 GPIO_ACTIVE_HIGH>  // Colonna 2: Tasti Alti (1.11)
             ;
     };
 
-    // 2. Ponte Geometrico: Riporta i tasti nella vista orizzontale classica della Corne
+    // 2. Ponte Geometrico (Mappa logica 18 tasti)
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <3>;
         rows = <6>;
         map = <
-            // Fila Superiore (Dita: Mignolo, Anulare, Medio, Indice, Indice Interno)
+            // Tasti Alti (0, 1, 2, 3, 4 da sinistra a destra)
             RC(0,2) RC(1,2) RC(2,2) RC(3,2) RC(4,2)
-            // Fila Centrale (Home Row)
+            // Tasti Medi / Home (5, 6, 7, 8, 9 da sinistra a destra)
             RC(0,1) RC(1,1) RC(2,1) RC(3,1) RC(4,1)
-            // Fila Inferiore
+            // Tasti Bassi (10, 11, 12, 13, 14 da sinistra a destra)
             RC(0,0) RC(1,0) RC(2,0) RC(3,0) RC(4,0)
-            // I 3 Tasti Pollice
+            // Tasti Pollice (15, 16, 17 da sinistra a destra)
             RC(5,0) RC(5,1) RC(5,2)
         >;
     };
 
-    // 3. Layout Fisico per ZMK Studio (Disegna il tastierino dritto a schermo)
+    // 3. Layout Fisico Reale per ZMK Studio (Aggiornato con il tuo nuovo layout KLE)
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "WalPad_V2";
+        display-name = "Cornepad";
         transform = <&default_transform>;
         kscan = <&kscan0>;
-        keys  // w   h    x    y   rot rx ry
-            = <&key_physical_attrs 100 100    0  10   0 0 0>  // Mignolo Alto
-            , <&key_physical_attrs 100 100  100   5   0 0 0>  // Anulare Alto
-            , <&key_physical_attrs 100 100  200   0   0 0 0>  // Medio Alto
-            , <&key_physical_attrs 100 100  300   5   0 0 0>  // Indice Alto
-            , <&key_physical_attrs 100 100  400  10   0 0 0>  // Ind. Int. Alto
+        keys  // w   h    x    y   rot   rx   ry
+            // --- FILA SUPERIORE ---
+            = <&key_physical_attrs 100 100    0   63     0   0   0>  // Tasto 0: Mignolo Alto
+            , <&key_physical_attrs 100 100  100   13     0   0   0>  // Tasto 1: Anulare Alto
+            , <&key_physical_attrs 100 100  200    0     0   0   0>  // Tasto 2: Medio Alto
+            , <&key_physical_attrs 100 100  300   38     0   0   0>  // Tasto 3: Indice Alto
+            , <&key_physical_attrs 100 100  400   50     0   0   0>  // Tasto 4: Indice Int. Alto
 
-            , <&key_physical_attrs 100 100    0 110   0 0 0>  // Mignolo Home
-            , <&key_physical_attrs 100 100  100 105   0 0 0>  // Anulare Home
-            , <&key_physical_attrs 100 100  200 100   0 0 0>  // Medio Home
-            , <&key_physical_attrs 100 100  300 105   0 0 0>  // Indice Home
-            , <&key_physical_attrs 100 100  400 110   0 0 0>  // Ind. Int. Home
+            // --- FILA CENTRALE (HOME ROW) ---
+            , <&key_physical_attrs 100 100    0  163     0   0   0>  // Tasto 5: Mignolo Home
+            , <&key_physical_attrs 100 100  100  113     0   0   0>  // Tasto 6: Anulare Home
+            , <&key_physical_attrs 100 100  200  100     0   0   0>  // Tasto 7: Medio Home
+            , <&key_physical_attrs 100 100  300  138     0   0   0>  // Tasto 8: Indice Home
+            , <&key_physical_attrs 100 100  400  150     0   0   0>  // Tasto 9: Indice Int. Home
 
-            , <&key_physical_attrs 100 100    0 210   0 0 0>  // Mignolo Basso
-            , <&key_physical_attrs 100 100  100 205   0 0 0>  // Anulare Basso
-            , <&key_physical_attrs 100 100  200 200   0 0 0>  // Medio Basso
-            , <&key_physical_attrs 100 100  300 205   0 0 0>  // Indice Basso
-            , <&key_physical_attrs 100 100  400 210   0 0 0>  // Ind. Int. Basso
+            // --- FILA INFERIORE ---
+            , <&key_physical_attrs 100 100    0  263     0   0   0>  // Tasto 10: Mignolo Basso
+            , <&key_physical_attrs 100 100  100  213     0   0   0>  // Tasto 11: Anulare Basso
+            , <&key_physical_attrs 100 100  200  200     0   0   0>  // Tasto 12: Medio Basso
+            , <&key_physical_attrs 100 100  300  238     0   0   0>  // Tasto 13: Indice Basso
+            , <&key_physical_attrs 100 100  400  250     0   0   0>  // Tasto 14: Indice Int. Basso
 
-            , <&key_physical_attrs 100 100  250 315   0 0 0>  // Pollice 1
-            , <&key_physical_attrs 100 100  350 325   0 0 0>  // Pollice 2
-            , <&key_physical_attrs 100 100  450 330   0 0 0>  // Pollice 3
+            // --- CLUSTER POLLICE AD ARCO (ROTANTE) ---
+            , <&key_physical_attrs 100 100  400  350  1500 675 225>  // Tasto 15: Pollice 1 (15°)
+            , <&key_physical_attrs 100 100  525  300  2500 500 225>  // Tasto 16: Pollice 2 (25°)
+            , <&key_physical_attrs 100 100  650  100  3500 500 225>  // Tasto 17: Pollice 3 (35°)
             ;
     };
 };
