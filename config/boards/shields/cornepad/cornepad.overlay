@@ -77,8 +77,10 @@
 
             // --- CLUSTER POLLICE AD ARCO ---
             , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1 (15°)
-            , <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2 (25°)
-            , <&key_physical_attrs 100 100  710  440  3500 500 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
+            , <&key_physical_attrs 100 100  400  450  2500 675 325>  // Tasto 16: Pollice 2 (25°)
+            , <&key_physical_attrs 100 100  400  450  3500 675 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
+            //, <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2 (25°)
+            //, <&key_physical_attrs 100 100  710  440  3500 500 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
             ;
     };
 };
