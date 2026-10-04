@@ -47,7 +47,7 @@
         >;
     };
 
-    // 3. Layout Fisico Reale per ZMK Studio
+    // 3. Layout Fisico Reale per ZMK Studio (Progressione Geometrica Costante)
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Cornepad";
@@ -75,12 +75,10 @@
             , <&key_physical_attrs 100 100  300  238     0   0   0>  // Tasto 13: Indice Basso
             , <&key_physical_attrs 100 100  400  250     0   0   0>  // Tasto 14: Indice Int. Basso
 
-            // --- CLUSTER POLLICE AD ARCO ---
-            , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1 (15°)
-            , <&key_physical_attrs 100 100  400  450  2500 675 325>  // Tasto 16: Pollice 2 (25°)
-            , <&key_physical_attrs 100 100  400  450  3500 675 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
-            //, <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2 (25°)
-            //, <&key_physical_attrs 100 100  710  440  3500 500 325>  // Tasto 17: Pollice 3 (35° allontanato radiale)
+            // --- CLUSTER POLLICE AD ARCO (PASSO COSTANTE: +103 X, +34 Y, +10° ROT) ---
+            , <&key_physical_attrs 100 100  362  386  1500 412 436>  // Tasto 15: Pollice 1 (15°)
+            , <&key_physical_attrs 100 100  465  420  2500 515 470>  // Tasto 16: Pollice 2 (25°)
+            , <&key_physical_attrs 100 100  568  454  3500 618 504>  // Tasto 17: Pollice 3 (35°)
             ;
     };
 };
