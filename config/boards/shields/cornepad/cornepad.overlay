@@ -47,7 +47,7 @@
         >;
     };
 
-    // 3. Layout Fisico Reale per ZMK Studio (Cluster Pollice Calibrato al Millimetro)
+    // 3. Layout Fisico Reale per ZMK Studio
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Cornepad";
@@ -78,7 +78,7 @@
             // --- CLUSTER POLLICE AD ARCO ---
             , <&key_physical_attrs 100 100  362  386  1500 412 436>  // Tasto 15: Pollice 1 (15°)
             , <&key_physical_attrs 100 100  465  420  2500 515 470>  // Tasto 16: Pollice 2 (25°)
-            , <&key_physical_attrs 100 100  551  471  3500 601 521>  // Tasto 17: Pollice 3 (35°, -1/6 X, +1/6 Y)
+            , <&key_physical_attrs 100 100  558  478  3500 608 528>  // Tasto 17: Pollice 3 (35°, +1/15 X, +1/15 Y)
             ;
     };
 };
