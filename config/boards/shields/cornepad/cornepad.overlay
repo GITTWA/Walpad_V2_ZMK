@@ -7,7 +7,7 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    // 1. Matrice Elettrica (I tuoi pin fisici saldati)
+    // 1. Matrice Elettrica (Pin fisici saldati)
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
@@ -30,7 +30,7 @@
             ;
     };
 
-    // 2. Ponte Geometrico (Mappa logica dei 18 tasti)
+    // 2. Ponte Geometrico (Mappa logica 18 tasti)
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <3>;
@@ -47,7 +47,7 @@
         >;
     };
 
-    // 3. Layout Fisico Reale per ZMK Studio (Cluster Pollice Corretto)
+    // 3. Layout Fisico Reale per ZMK Studio (Regolazione Radiale Calibrata)
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Cornepad";
@@ -75,10 +75,10 @@
             , <&key_physical_attrs 100 100  300  238     0   0   0>  // Tasto 13: Indice Basso
             , <&key_physical_attrs 100 100  400  250     0   0   0>  // Tasto 14: Indice Int. Basso
 
-            // --- CLUSTER POLLICE (POSIZIONAMENTO CALIBRATO) ---
-            , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1 (+100 Y)
-            , <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2 (+100 Y)
-            , <&key_physical_attrs 100 100  650  400  3500 500 325>  // Tasto 17: Pollice 3 (+100 Y e -2u offset)
+            // --- CLUSTER POLLICE AD ARCO ---
+            , <&key_physical_attrs 100 100  400  450  1500 675 325>  // Tasto 15: Pollice 1
+            , <&key_physical_attrs 100 100  525  400  2500 500 325>  // Tasto 16: Pollice 2
+            , <&key_physical_attrs 100 100  661  406  3500 500 325>  // Tasto 17: Pollice 3 (Regolato radiale)
             ;
     };
 };
