@@ -2,37 +2,65 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// Includiamo il file esterno con tutte le macro e i tap dance
+#include "macros.dtsi"
+
 / {
+    // -------------------------------------------------------------
+    // COMBO: PREMI TUTTI E 3 I TASTI POLLICE PER IL LAYER 3
+    // -------------------------------------------------------------
+    combos {
+        compatible = "zmk,combos";
+        combo_layer3 {
+            timeout-ms = <80>;
+            key-positions = <15 16 17>;
+            bindings = <&mo 3>;
+        };
+    };
+
+    // -------------------------------------------------------------
+    // MAPPA DEI LIVELLI (KEYMAP)
+    // -------------------------------------------------------------
     keymap {
         compatible = "zmk,keymap";
 
-        // LIVELLO 0: Default (Tasti Alfanumerici base)
-        default_layer {
+        // LIVELLO 0: Disegno Base e Quotature
+        layer_0 {
             bindings = <
-                &kp Q   &kp W   &kp E   &kp R   &kp T
-                &kp A   &kp S   &kp D   &kp F   &kp G
-                &kp Z   &kp X   &kp C   &kp V   &kp B
-                        &mo 1   &mo 2   &kp SPACE
+                &kp F3     &td_q_qa    &td_c_a      &td_l_pl     &kp ESC
+                &kp F8     &td_qd_qr   &td_mt_t     &m_xline     &kp DELETE
+                &kp LSHFT  &m_dimang   &none        &m_rectang   &kp ENTER
+                           &to 0       &to 1        &to 2
             >;
         };
 
-        // LIVELLO 1: Navigazione e Numeri (Tenendo premuto il 1° tasto pollice)
-        nav_layer {
+        // LIVELLO 1: Modifica e Gestione Layer
+        layer_1 {
             bindings = <
-                &kp N1  &kp N2    &kp N3    &kp N4     &kp N5
-                &kp TAB &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT
-                &none   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
-                        &trans    &trans    &kp ENTER
+                &trans     &m_explode  &m_scale     &td_m_co     &trans
+                &trans     &td_iso_uniso &td_tr_ex  &m_mirror    &trans
+                &trans     &m_laycor   &td_f_cha    &m_rotate    &trans
+                           &trans      &trans       &trans
             >;
         };
 
-        // LIVELLO 2: Gestione Bluetooth e Funzioni (Tenendo premuto il 2° tasto pollice)
-        fn_layer {
+        // LIVELLO 2: Tastierino Numerico
+        layer_2 {
             bindings = <
-                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR  &none  &bootloader
-                &kp F1        &kp F2        &kp F3      &kp F4 &kp F5
-                &kp F6        &kp F7        &kp F8      &kp F9 &kp F10
-                              &trans        &trans      &trans
+                &none      &kp KP_N7   &kp KP_N8    &kp KP_N9    &kp KP_MINUS
+                &kp KP_DOT &kp KP_N4   &kp KP_N5    &kp KP_N6    &kp KP_PLUS
+                &kp KP_N0  &kp KP_N1   &kp KP_N2    &kp KP_N3    &trans
+                           &trans      &trans       &trans
+            >;
+        };
+
+        // LIVELLO 3: Gestione Bluetooth (5 profili ordinati sulla prima fila)
+        layer_3 {
+            bindings = <
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                &none         &none         &none         &none         &bt BT_CLR
+                &none         &none         &none         &none         &none
+                              &trans        &trans        &trans
             >;
         };
     };
