@@ -255,5 +255,13 @@
             tapping-term-ms = <200>;
             bindings = <&m_isolay>, <&m_unisolay>;
         };
+
+        // Tasto 0 (Livello 2): Singolo tap = *, Doppio tap = /
+        td_mul_div: td_multiply_divide {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp KP_MULTIPLY>, <&kp KP_DIVIDE>;
+        };
     };
 };
