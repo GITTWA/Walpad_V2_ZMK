@@ -3,7 +3,7 @@
 
 / {
     // -------------------------------------------------------------
-    // MACRO AUTOCAD (TEMPI FULMINEI: 1ms tap / 1ms wait)
+    // MACRO AUTOCAD (TEMPI ULTRA-RAPIDI: 1ms tap / 1ms wait)
     // -------------------------------------------------------------
     macros {
         m_linea: m_linea {
@@ -190,69 +190,69 @@
     };
 
     // -------------------------------------------------------------
-    // DOPPIO TAP CON ATTESA RIDOTTA A 130ms (REATTIVITÀ IMMEDIATA)
+    // DOPPIO TAP CON ATTESA RIPRISTINATA A 200ms
     // -------------------------------------------------------------
     behaviors {
         td_l_pl: td_line_pline {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_linea>, <&m_plinea>;
         };
 
         td_c_a: td_circle_arc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_circle>, <&m_arc>;
         };
 
         td_mt_t: td_mtext_text {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_mtext>, <&m_text>;
         };
 
         td_q_qa: td_quota_aligned {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_dimlin>, <&m_dimali>;
         };
 
         td_qd_qr: td_quota_dia_rad {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_dimdia>, <&m_dimrad>;
         };
 
         td_m_co: td_move_copy {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_move>, <&m_copy>;
         };
 
         td_tr_ex: td_trim_extend {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_trim>, <&m_extend>;
         };
 
         td_f_cha: td_fillet_chamfer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_fillet>, <&m_chamfer>;
         };
 
         td_iso_uniso: td_isolay_unisolay {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&m_isolay>, <&m_unisolay>;
         };
 
@@ -260,7 +260,7 @@
         td_mul_div: td_multiply_divide {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <200>;
             bindings = <&kp KP_MULTIPLY>, <&kp KP_DIVIDE>;
         };
     };
