@@ -3,256 +3,256 @@
 
 / {
     // -------------------------------------------------------------
-    // MACRO AUTOCAD (Comando preceduto da _ e seguito da INVIO)
+    // MACRO AUTOCAD (TEMPI FULMINEI: 1ms tap / 1ms wait)
     // -------------------------------------------------------------
     macros {
         m_linea: m_linea {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp L &kp I &kp N &kp E &kp ENTER>;
         };
 
         m_plinea: m_plinea {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp P &kp L &kp I &kp N &kp E &kp ENTER>;
         };
 
         m_xline: m_xline {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp X &kp L &kp I &kp N &kp E &kp ENTER>;
         };
 
         m_rectang: m_rectang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp R &kp E &kp C &kp T &kp A &kp N &kp G &kp ENTER>;
         };
 
         m_circle: m_circle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp C &kp I &kp R &kp C &kp L &kp E &kp ENTER>;
         };
 
         m_arc: m_arc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp A &kp R &kp C &kp ENTER>;
         };
 
         m_mtext: m_mtext {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp M &kp T &kp E &kp X &kp T &kp ENTER>;
         };
 
         m_text: m_text {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp T &kp E &kp X &kp T &kp ENTER>;
         };
 
         m_dimlin: m_dimlin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp D &kp I &kp M &kp L &kp I &kp N &kp E &kp A &kp R &kp ENTER>;
         };
 
         m_dimali: m_dimali {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp D &kp I &kp M &kp A &kp L &kp I &kp G &kp N &kp E &kp D &kp ENTER>;
         };
 
         m_dimdia: m_dimdia {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp D &kp I &kp M &kp D &kp I &kp A &kp M &kp E &kp T &kp E &kp R &kp ENTER>;
         };
 
         m_dimrad: m_dimrad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp D &kp I &kp M &kp R &kp A &kp D &kp I &kp U &kp S &kp ENTER>;
         };
 
         m_dimang: m_dimang {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp D &kp I &kp M &kp A &kp N &kp G &kp U &kp L &kp A &kp R &kp ENTER>;
         };
 
         m_move: m_move {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp M &kp O &kp V &kp E &kp ENTER>;
         };
 
         m_copy: m_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp C &kp O &kp P &kp Y &kp ENTER>;
         };
 
         m_mirror: m_mirror {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp M &kp I &kp R &kp R &kp O &kp R &kp ENTER>;
         };
 
         m_rotate: m_rotate {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp R &kp O &kp T &kp A &kp T &kp E &kp ENTER>;
         };
 
         m_scale: m_scale {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp S &kp C &kp A &kp L &kp E &kp ENTER>;
         };
 
         m_trim: m_trim {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp T &kp R &kp I &kp M &kp ENTER>;
         };
 
         m_extend: m_extend {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp E &kp X &kp T &kp E &kp N &kp D &kp ENTER>;
         };
 
         m_fillet: m_fillet {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp F &kp I &kp L &kp L &kp E &kp T &kp ENTER>;
         };
 
         m_chamfer: m_chamfer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp C &kp H &kp A &kp M &kp F &kp E &kp R &kp ENTER>;
         };
 
         m_explode: m_explode {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp E &kp X &kp P &kp L &kp O &kp D &kp E &kp ENTER>;
         };
 
         m_isolay: m_isolay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp I &kp S &kp O &kp L &kp A &kp Y &kp ENTER>;
         };
 
         m_unisolay: m_unisolay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp U &kp N &kp I &kp S &kp O &kp L &kp A &kp Y &kp ENTER>;
         };
 
         m_laycor: m_laycor {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>; tap-ms = <10>;
+            wait-ms = <1>; tap-ms = <1>;
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp L &kp A &kp Y &kp C &kp O &kp R &kp ENTER>;
         };
     };
 
     // -------------------------------------------------------------
-    // DOPPIO TAP (TAP DANCE)
+    // DOPPIO TAP CON ATTESA RIDOTTA A 130ms (REATTIVITÀ IMMEDIATA)
     // -------------------------------------------------------------
     behaviors {
         td_l_pl: td_line_pline {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_linea>, <&m_plinea>;
         };
 
         td_c_a: td_circle_arc {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_circle>, <&m_arc>;
         };
 
         td_mt_t: td_mtext_text {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_mtext>, <&m_text>;
         };
 
         td_q_qa: td_quota_aligned {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_dimlin>, <&m_dimali>;
         };
 
         td_qd_qr: td_quota_dia_rad {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_dimdia>, <&m_dimrad>;
         };
 
         td_m_co: td_move_copy {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_move>, <&m_copy>;
         };
 
         td_tr_ex: td_trim_extend {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_trim>, <&m_extend>;
         };
 
         td_f_cha: td_fillet_chamfer {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_fillet>, <&m_chamfer>;
         };
 
         td_iso_uniso: td_isolay_unisolay {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&m_isolay>, <&m_unisolay>;
         };
 
@@ -260,7 +260,7 @@
         td_mul_div: td_multiply_divide {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <130>;
             bindings = <&kp KP_MULTIPLY>, <&kp KP_DIVIDE>;
         };
     };
