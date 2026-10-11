@@ -7,10 +7,11 @@
         zmk,physical-layout = &physical_layout0;
     };
 
-    // 1. Matrice Elettrica (Pin fisici saldati)
+    // 1. Matrice Elettrica (Pin fisici saldati+ supporto wake up)
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         diode-direction = "col2row";
+        wakeup-source;  // <--- riga attiva il risveglio dopo deep sleep
 
         // RIGHE (lato sinistro della scheda)
         row-gpios
