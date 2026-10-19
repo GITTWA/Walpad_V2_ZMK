@@ -7,14 +7,24 @@
 
 / {
     // -------------------------------------------------------------
-    // COMBO: PREMI TUTTI E 3 I TASTI POLLICE PER IL LAYER 3
+    // COMBOS (COMBINAZIONI DI TASTI)
     // -------------------------------------------------------------
     combos {
         compatible = "zmk,combos";
+
+        // Combo Pollici per Layer 3
         combo_layer3 {
             timeout-ms = <80>;
             key-positions = <15 16 17>;
             bindings = <&mo 3>;
+        };
+
+        // Combo Tasto 0 (F3) + Tasto 10 (Shift) = Ctrl + Tab (Valida su Layer 0 e Layer 1)
+        combo_ctrl_tab {
+            timeout-ms = <150>;
+            key-positions = <0 10>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0 1>;
         };
     };
 
@@ -24,12 +34,12 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // LIVELLO 0: Disegno Base e Quotature
+        // LIVELLO 0: Disegno Base e Quotature (con _matchprop sul tasto 12)
         layer_0 {
             bindings = <
                 &kp F3     &td_q_qa    &td_c_a      &td_l_pl     &kp ESC
                 &kp F8     &td_qd_qr   &td_mt_t     &m_xline     &kp DELETE
-                &kp LSHFT  &m_dimang   &none        &m_rectang   &kp ENTER
+                &kp LSHFT  &m_dimang   &m_matchprop &m_rectang   &kp ENTER
                            &to 0       &to 1        &to 2
             >;
         };
