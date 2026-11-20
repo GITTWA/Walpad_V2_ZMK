@@ -104,11 +104,12 @@
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp M &kp O &kp V &kp E &kp ENTER>;
         };
 
+        // MACRO COPIA AGGIORNATA CON L'ALIAS _CO (Elimina i conflitti di autocompletamento)
         m_copy: m_copy {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <1>; tap-ms = <1>;
-            bindings = <&macro_tap &kp CAD_UNDERSCORE &kp C &kp O &kp P &kp Y &kp ENTER>;
+            bindings = <&macro_tap &kp CAD_UNDERSCORE &kp C &kp O &kp ENTER>;
         };
 
         m_mirror: m_mirror {
@@ -188,7 +189,6 @@
             bindings = <&macro_tap &kp CAD_UNDERSCORE &kp L &kp A &kp Y &kp C &kp O &kp R &kp ENTER>;
         };
 
-        // NUOVA MACRO: MATCHPROP (_matchprop + INVIO)
         m_matchprop: m_matchprop {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -198,7 +198,7 @@
     };
 
     // -------------------------------------------------------------
-    // DOPPIO TAP CON ATTESA RIPRISTINATA A 200ms
+    // DOPPIO TAP CON ATTESA A 200ms
     // -------------------------------------------------------------
     behaviors {
         td_l_pl: td_line_pline {
